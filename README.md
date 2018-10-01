@@ -4,6 +4,7 @@
 
 |column|type|options|
 |------|----|-------|
+|name|varchar(255)|null: false, unique: true, index: true|
 |email|varchar(255)|null: false, unique: true|
 
 ### association
