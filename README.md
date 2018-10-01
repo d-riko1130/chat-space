@@ -4,12 +4,11 @@
 
 |column|type|options|
 |------|----|-------|
-|name|varchar(255)|null: false, unique: true, add_index :users, :name|
 |email|varchar(255)|null: false, unique: true|
 
 ### association
-- has_many :groups, through: :members
 - has_many :members
+- has_many :groups, through: :members
 - has_many :messages
 
 ## groupsテーブル
@@ -19,8 +18,8 @@
 |name|varchar(255)|null: false|
 
 ### association
-- has_many :users, through: :members
 - has_many :members
+- has_many :users, through: :members
 - has_many :messages
 
 ## membersテーブル
@@ -33,7 +32,6 @@
 ### association
 - belongs_to :group
 - belongs_to :user
-- has_many :messages
 
 ## messagesテーブル
 
@@ -47,4 +45,3 @@
 ### association
 - belongs_to :user
 - belongs_to :group
-- belongs_to :member
