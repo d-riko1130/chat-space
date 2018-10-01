@@ -4,11 +4,11 @@
 
 |column|type|options|
 |------|----|-------|
-|name|varchar(255)|null: false, unique: true|
+|name|varchar(255)|null: false, unique: true, add_index :users, :name|
 |email|varchar(255)|null: false, unique: true|
 
 ### association
-- has_many :groups
+- has_many :groups, through: :members
 - has_many :members
 - has_many :messages
 
@@ -19,7 +19,7 @@
 |name|varchar(255)|null: false|
 
 ### association
-- has_many :users
+- has_many :users, through: :members
 - has_many :members
 - has_many :messages
 
@@ -40,7 +40,7 @@
 |column|type|options|
 |------|----|-------|
 |body|text||
-|image|varchar(255)||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
