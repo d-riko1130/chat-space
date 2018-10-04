@@ -1,0 +1,24 @@
+%form{:action => "cgi-bin/formmail.cgi", :method => "post"}
+  %p
+    名前：
+    %input{:name => "name", :size => "40", :type => "text"}/
+  %p
+    性別：
+    %input{:name => "sex", :type => "radio", :value => "male"}>/
+    男
+    = succeed "\u{5973}" do
+      %input{:name => "sex", :type => "radio", :value => "female"}/
+  %p
+    血液型：
+    %select{:name => "blood"}
+      %option{:value => "A"} A型
+      %option{:value => "B"} B型
+      %option{:value => "O"} O型
+      %option{:value => "AB"} AB型
+  %p
+    ご感想：
+    %br/
+    %textarea{:cols => "40", :name => "kanso", :rows => "4"}
+  %p
+    %input{:type => "submit", :value => "送信"}/
+    %input{:type => "reset", :value => "リセット"}/
