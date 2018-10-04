@@ -1,0 +1,105 @@
+.wrapper
+  .side-bar
+    .header
+      .header__name tsukada
+      .header__lists
+        %ul
+          %li.list
+            %a{href: "https://www.google.co.jp/"}
+              %span.fa.fa-edit.icon
+            %a{href: "https://www.google.co.jp/"}
+              %span.fa.fa-cog.icon
+
+    .groups
+      .group
+        %a.group__link{href: "https://www.google.co.jp/"}
+          .group__title
+            sample
+          .group__message
+            samplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample
+
+  .main
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        .left-header__members
+          Member：1234567890,1234567890,
+      .right-header
+        %a{href: "https://www.google.co.jp/"}
+          Edit
+
+    .messages
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-tetete-tettettete-
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+      .message
+        .message__user
+          test
+        .message__post-day
+          2018/10/04
+        .message__sentence
+          tetetetete
+
+    .form
+      %form.new__message
+        %input.new__message__form{placeholder: "type a message"}
+        %label.new__message__image{for: "message_image"}
+          %i.fa.fa-picture-o
+          %input.new__message__image.hidden{type: "file", id: "message_image"}
+
+      %input.form__submit{name: "commit", type: "submit", value: "Send"}
