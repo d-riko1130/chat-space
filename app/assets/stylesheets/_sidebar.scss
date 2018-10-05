@@ -21,7 +21,12 @@
     .header__lists {
       display: inline-block;
       float: right;
-      a {
+      ul {
+        display: -webkit-flex;
+        display: flex;
+      }
+      .list {
+        margin: 0 0 0 5px;
         text-decoration: none;
       }
     }
