@@ -22,9 +22,9 @@
     .right-header {
       float: right;
       margin: 28px 0 0;
-      border: solid 1px $font_lightblue;
+      border: solid 1px $light_blue;
       a {
-        color: $font_lightblue;
+        color: $light_blue;
         text-decoration: none;
         height: 40px;
         line-height: 40px;
@@ -47,7 +47,7 @@
         float: left;
         font-size: 16px;
         font-weight: bold;
-        color: $font_lightgray;
+        color: $light_gray;
       }
       .message__post-day {
         float: left;
@@ -57,7 +57,7 @@
       }
       .message__sentence {
         font-size: 14px;
-        color: $font_lightgray;
+        color: $light_gray;
         clear: both;
       }
     }
@@ -76,7 +76,7 @@
         width: calc(100vw - 300px - 200px);
         padding: 0 0 0 10px;
         font-size: 16px;
-        color: $font_lightgray;
+        color: $light_gray;
       }
       .new__message__image {
         margin: 0 10px 0 0;
@@ -92,8 +92,8 @@
       height: 50px;
       padding: 0 20px 0;
       margin: 0 0 0 15px;
-      background-color: $font_lightblue;
-      color: $font_white;
+      background-color: $light_blue;
+      color: $white;
       float: right;
     }
   }

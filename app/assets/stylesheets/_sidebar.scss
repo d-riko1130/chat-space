@@ -1,13 +1,13 @@
 .side-bar {
-  color: $font_white;
+  color: $white;
   width: 300px;
   box-sizing: border-box;
   a {
-    color: $font_white;
+    color: $white;
   }
 
   .header {
-    background-color: #253141;
+    background-color: $side_blue_dark;
     height: 100px;
     line-height: 100px;
     padding: 0 20px 0;
@@ -34,7 +34,7 @@
 }
 
 .groups {
-  background-color: #2f3e51;
+  background-color: $side_blue_light;
   height: calc(100vh - 120px);
   padding: 20px 20px 0;
   overflow-wrap : break-word;
