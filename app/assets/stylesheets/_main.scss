@@ -1,101 +1,107 @@
 .main {
   width: calc(100vw - 300px);
-
   .header {
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px 0;
-    border-bottom: solid 1px #eeeeee;
     .left-header {
       float: left;
-      .left-header__title {
+      &__title {
         font-size: 20px;
         padding: 35px 0 0;
         color: #333333;
       }
-      .left-header__members {
+      &__members {
         font-size: 12px;
         padding: 0 0 15px;
-        color:#999999;
+        color: $light_gray;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
       }
     }
     .right-header {
+      border: solid 1px $light_blue;
+      color: $light_blue;
       float: right;
       margin: 28px 0 0;
-      border: solid 1px $light_blue;
-      a {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px 0;
+      &__button {
         color: $light_blue;
         text-decoration: none;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 20px 0;
-        display: block;
       }
     }
   }
-
   .messages {
     background-color: #fafafa;
-    height: calc(100vh - 100px - 90px);
+    box-sizing: border-box;
     padding: 46px 40px 0;
+    height: calc(100vh - 100px - 90px);
     overflow: scroll;
     overflow-wrap : break-word;
-    box-sizing: border-box;
     .message {
-      padding: 0 0 40px;
-      .message__user {
-        float: left;
-        font-size: 16px;
-        font-weight: bold;
-        color: $light_gray;
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: $light_gray;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: #999999;
+          font-size: 12px;
+          padding: 0 0 0 10px;
+        }
       }
-      .message__post-day {
-        float: left;
-        font-size: 12px;
-        color: #999999;
-        padding: 0 0 10px 10px;
-      }
-      .message__sentence {
-        font-size: 14px;
-        color: $light_gray;
-        clear: both;
+      .lower-message {
+        margin: 10px 0;
+        &__content {
+          color: $light_gray;
+          font-size: 14px;
+          margin: 0 0 40px;
+        }
       }
     }
   }
   .form {
-    height: 90px;
-    padding: 20px 40px;
     background-color: #dddddd;
     box-sizing: border-box;
-    .new__message {
+    height: 90px;
+    padding: 20px 40px;
+    &__message {
+      border: none;
       float: left;
+      width: calc(100vw - 150px);
+    }
+    &__mask {
+      float: left;
+      height: 50px;
+      width: calc(100vw - 230px - 300px);
+      padding: 0 10px;
       position: relative;
-      .new__message__form {
-        border: none;
+      &__image {
         height: 50px;
-        width: calc(100vw - 300px - 200px);
-        padding: 0 0 0 10px;
-        font-size: 16px;
-        color: $light_gray;
-      }
-      .new__message__image {
-        margin: 0 10px 0 0;
+        font-size: 20px;
+        line-height: 50px;
         position: absolute;
-        top: 30%;
-        right: 0;
+        right: 13%;
         .hidden {
           display: none;
         }
       }
     }
-    .form__submit {
-      height: 50px;
-      padding: 0 20px 0;
-      margin: 0 0 0 15px;
+    &__submit {
       background-color: $light_blue;
+      border: none;
       color: $white;
       float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
   }
 }
-
