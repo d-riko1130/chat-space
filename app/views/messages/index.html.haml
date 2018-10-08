@@ -1,3 +1,28 @@
--# .wrapper
--#   = render 'sidebar'
--#   = render 'main'
+.wrapper
+  = render 'shared/sidebar'
+
+  .main
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        .left-header__members
+          Member：
+          - @group.users.each do |member|
+            = member.name
+
+      .right-header
+        %a.right-header__button{href: "https://www.google.co.jp/"}
+          Edit
+
+    .messages
+      = render partial: 'message', collection: @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        =f.submit 'Send', class: 'form__submit'

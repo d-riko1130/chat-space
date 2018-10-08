@@ -72,22 +72,23 @@
     height: 90px;
     padding: 20px 40px;
     &__message {
+      box-sizing: border-box;
       border: none;
       float: left;
-      width: calc(100vw - 150px);
+      width: calc(100vw - 300px - 200px);
+      height: 50px;
+      padding: 0 40px 0 10px;
     }
     &__mask {
-      float: left;
-      height: 50px;
-      width: calc(100vw - 230px - 300px);
-      padding: 0 10px;
+      width: calc(100vw - 300px - 200px);
       position: relative;
       &__image {
         height: 50px;
         font-size: 20px;
         line-height: 50px;
+        padding-right: 10px;
         position: absolute;
-        right: 13%;
+        right: 0;
         .hidden {
           display: none;
         }
