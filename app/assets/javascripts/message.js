@@ -1,28 +1,24 @@
 $(function() {
-  // function buildHTML(message) {
-  //   var html = `
-
-  //   <div class="message">
-  //   <div class="upper-message">
-  //   <div class="upper-message__user-name">
-  //   <%= message.user.name %>
-  //   </div>
-  //   <div class="upper-message__date">
-  //   <%= message.created_at.strftime('%Y/%m/%d %H:%M') %>
-  //   </div>
-  //   </div>
-  //   <div class="lower-message">
-  //   <% if message.content.present? %>
-  //   <p class="lower-message__content">
-  //   <%= message.content %>
-  //   </p>
-  //   <%= image_tag message.image.url, class: 'lower-message__image' if message.image.present? %>
-  //   </div>
-  //   </div>
-
-  //   `
-  //   return html;
-  // }
+  function buildHTML(message) {
+    var html = `<div class="message">
+    <div class="upper-message">
+    <div class="upper-message__user-name">
+    ${ message.name }
+    </div>
+    <div class="upper-message__date">${ message.date }</div>
+    </div>
+    <div class="lower-message">`
+    if ( message.content && message.image.url != null ) {
+      html = $(html).append(`<p class="lower-message__content">${ message.content }</p><img src="${message.image.url}", class="lower-message__image"></div></div>`)
+      return html
+    } else if ( message.image.url != null ) {
+      html = $(html).append(`<img src="${message.image.url}", class="lower-message__image"></div></div>`)
+      return html
+    } else if ( message.content != null ) {
+      html = $(html).append(`<p class="lower-message__content">${ message.content }</p></div></div>`)
+      return html
+    }
+  };
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
@@ -37,16 +33,17 @@ $(function() {
       contentType: false
     })
 
-    // .done(function(data) {
-    //   console.log('おっけー')
-    //   var html = buildHTML(data);
-    //   $('.message').append(html);
-    //   $('.form__message').val('');
-    //   $('.form__mask_image').val('');
-    //   // $('.form__submit').prop('disabled', false);
-    // })
-    // .fail(function(message){
-    //   console.log('えらー');
-    // });
+    .done(function(data) {
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('#message_image').val('');
+      $('.form__message').val('');
+      $('.form__submit').prop('disabled', false);
+      $('.messages').animate( {'scrollTop': $('.messages')[0].scrollHeight}, 1000 );
+    })
+    .fail(function(message){
+      $('.form__submit').prop('disabled', false);
+      alert('メッセージの送信に失敗しました');
+    });
   })
 });
