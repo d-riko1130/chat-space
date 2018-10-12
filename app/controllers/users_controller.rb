@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all(user_params)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def edit
@@ -14,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def user_params
     params.require(:user).permit(:name, :email)
   end
