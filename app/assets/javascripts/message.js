@@ -2,22 +2,21 @@ $(function() {
   function buildHTML(message) {
     var content = message.content ? `<p class="lower-message__content">${ message.content }</p>` : ''
     var imageurl = message.image.url ? `<img src="${message.image.url}", class="lower-message__image">` : ''
-    var html = `<div class="message">
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
-                      ${ message.name }
-                    </div>
-                    <div class="upper-message__date">
-                      ${ message.date }
-                    </div>
-                  </div>
-                  <div class="lower-message">
-                    ${ content }
-                    ${ imageurl }
-                  </div>
-                </div>`
+    var html = `
+    <div class="message">
+      <div class="upper-message">
+        <div class="upper-message__user-name">${ message.name }</div>
+        <div class="upper-message__date">${ message.date }</div>
+      </div>
+      <div class="lower-message">
+        ${ content }
+        ${ imageurl }
+      </div>
+    </div>
+    `
     return html
   };
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -30,6 +29,7 @@ $(function() {
       processData: false,
       contentType: false
     })
+
     .done(function(data) {
       var html = buildHTML(data);
       $('.messages').append(html);
