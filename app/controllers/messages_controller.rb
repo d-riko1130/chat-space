@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
   def index
     @message  = Message.new
     @messages = @group.messages.includes(:user)
+    respond_to do |format|
+      format.html
+      format.json { @new_message = @messages.where('id > ?', params[:id]) }
+    end
   end
 
   def create
@@ -19,7 +23,6 @@ class MessagesController < ApplicationController
       flash.now[:alert] = 'メッセージを入力してください。'
       render :index
     end
-
   end
 
   private

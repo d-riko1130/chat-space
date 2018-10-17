@@ -12,8 +12,8 @@
             = member.name
 
       .right-header
-        %a.right-header__button{href: "https://www.google.co.jp/"}
-          Edit
+        .right-header__button
+          = link_to 'Edit', edit_group_path(@group)
 
     .messages
       = render partial: 'message', collection: @messages
