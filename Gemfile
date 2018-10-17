@@ -59,3 +59,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'pry-rails'
+
+group :production do
+  gem 'unicorn'
+end
