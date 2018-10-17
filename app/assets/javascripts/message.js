@@ -58,11 +58,7 @@ $(function() {
         data: {id: MessageId}
       })
       .done(function(data) {
-        console.log('1');
-        console.log(data);
         data.forEach(function(message) {
-          console.log('2');
-          console.log(message);
           $('.messages').append(buildHTML(message));
           $('.messages').animate( {'scrollTop': $('.messages')[0].scrollHeight}, 1000 );
         });
